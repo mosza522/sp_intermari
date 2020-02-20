@@ -1,0 +1,41 @@
+php artisan make:migration create_chicken_received_head_table --create=ck_chicken_received_head
+php artisan make:migration create_chicken_received_item_table --create=ck_chicken_received_item
+
+php artisan make:migration create_medication_received_head_table --create=ck_medication_received_head
+php artisan make:migration create_medication_received_item_table --create=ck_medication_received_item
+
+php artisan make:migration create_food_received_head_table --create=ck_food_received_head
+php artisan make:migration create_status_table --create=ck_status
+
+
+php artisan make:migration create_report_rg01_table --create=ck_report_rg01
+php artisan make:migration create_report_rg02_table --create=ck_report_rg02
+php artisan make:migration create_alert_table --create=ck_alert
+php artisan make:migration create_lbms_table --create=ck_lbms
+
+Capacity of Broiler Farms
+
+php artisan make:seeder MaterialSeeder
+
+
+php artisan make:model Models\Material
+php artisan make:model Models\ChickenReceivedHead
+
+LBMS 
+
+php artisan make:seeder PDTypeProductionTableSeeder
+
+php artisan make:controller Farm\MemoController
+
+php artisan migrate:rollback
+php artisan migrate:refresh --seed
+php artisan db:seed
+php artisan db:seed --class=MenuTableSeeder
+composer dump-autoload -o
+
+php artisan cache:clear
+php artisan config:cache
+
+
+
+php artisan make:controller DashboardController
